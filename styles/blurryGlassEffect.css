@@ -135,6 +135,9 @@ h2 {
 }
 
 .card {
-	background-color: var(--surface-2);
+	background-color: var(--surface-1);
 	border-radius: 1rem;
+
+	border: var(--border-1) 1px solid;
+	background-image: radial-gradient(circle at 50% 250%, var(--primary-500), transparent);
 }
