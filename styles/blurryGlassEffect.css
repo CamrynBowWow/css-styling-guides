@@ -135,16 +135,36 @@ h2 {
 }
 
 .card {
+	--border-width: 1px;
+	border-radius: 1rem;
+	position: relative;
+}
+
+.card::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	border-radius: inherit;
+	border: var(--border-width) solid transparent;
+	background: linear-gradient(var(--border-1), var(--border-2)) border-box;
+	mask: linear-gradient(black 0 0) border-box, linear-gradient(black 0) padding-box;
+	mask-composite: subtract;
+}
+
+/* .card {
 	background-color: var(--surface-1);
 	border-radius: 1rem;
 
 	border: transparent 1px solid;
 	background: radial-gradient(circle at 50% 250%, var(--primary-500), var(--surface-1)) padding-box,
 		linear-gradient(var(--border-1), var(--border-2)) border-box;
+} */
 
-	/* Long WayBelow */
-	/* background-image: radial-gradient(circle at 50% 250%, var(--primary-500), var(--primary-500)),
+/* Long Way Below */
+/* .card {
+	background-image: radial-gradient(circle at 50% 250%, var(--primary-500), var(--primary-500)),
 		linear-gradient(red, blue);
 	background-origin: padding-box, border-box;
-	background-clip: padding-box, border-box; */
-}
+	background-clip: padding-box, border-box;
+} */
