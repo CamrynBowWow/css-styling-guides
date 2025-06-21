@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blurry Effect</title>
+    <!-- Highlight.js core and style -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Optional: load specific languages -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/css.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/xml.min.js"></script>
+    <!-- XML = HTML -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Blurry Glass Effect</h1>
+    <a href="blurryGlassEffect.html" target="_blank">Blurry Glass Effect Preview</a>
+
+    <section>
+        <h2>HTML</h2>
+        <div>
+            <pre>
+                <code class="language-html">
+                    &lt;div class=&quot;card&quot;&gt;
+                        &lt;div&gt;
+                            &lt;h1&gt;Refer and Earn&lt;/h1&gt;
+                            &lt;p&gt;Refer Friends, Earn Points and Fees&lt;/p&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;flex-between&quot;&gt;
+                            &lt;div&gt;
+                                &lt;h2&gt;Referral Code&lt;/h2&gt;
+                                &lt;div class=&quot;referral-code&quot;&gt;
+                                    &lt;kbd&gt;7D45564JK355&lt;/kbd&gt;
+                                    &lt;button class='copy' aria-label=&quot;copy code&quot;&gt;
+                                    &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot; viewBox=&quot;0 0 512 512&quot;&gt;
+                                    &lt;!-- Icon from IonIcons by Ben Sperry - https://github.com/ionic-team/ionicons/blob/main/LICENSE --&gt;
+                                    &lt;rect width=&quot;336&quot; height=&quot;336&quot; x=&quot;128&quot; y=&quot;128&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;32&quot; rx=&quot;57&quot; ry=&quot;57&quot; /&gt;
+                                    &lt;path fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;32&quot; d=&quot;m383.5 128l.5-24a56.16 56.16 0 0 0-56-56H112a64.19 64.19 0 0 0-64 64v216a56.16 56.16 0 0 0 56 56h24&quot; /&gt;
+                                    &lt;/svg&gt;
+                                    &lt;/button&gt;
+                                &lt;/div&gt;
+
+                            &lt;/div&gt;
+                            &lt;div class=&quot;referred-users&quot;&gt;
+                                &lt;h2&gt;Referred Users&lt;/h2&gt;
+                                &lt;p class='user-count'&gt;4&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class='rewards'&gt;
+                            &lt;h2&gt;Rewards&lt;/h2&gt;
+                            &lt;p&gt;
+                                &lt;span class=&quot;text-accent&quot;&gt;20%&lt;/span&gt; Platform Fees +
+                                &lt;span class=&quot;text-accent&quot;&gt;10%&lt;/span&gt; Extra points
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>CSS</h2>
+        <div>
+            <pre>
+                <code class="language-css">
+                    :root {
+                        --primary-700: hsl(243, 26%, 15%);
+                        --primary-600: hsl(252, 9%, 22%);
+                        --primary-500: hsl(259, 13%, 28%);
+
+                        --surface-3: var(--primary-700);
+
+                        --border-1: var(--primary-500); /* top */
+                        --border-2: var(--primary-600); /* bottom */
+                    }
+
+                    .card {
+                        --border-width: 1px;
+                        border-radius: 1rem;
+                        position: relative;
+
+                        background: hsl(from var(--surface-3) h s l / 0.5);
+                        backdrop-filter: blur(12px);
+                    }
+
+                    .card::before {
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        inset: 0;
+                        border-radius: inherit;
+                        border: var(--border-width) solid transparent;
+                        background: linear-gradient(var(--border-1), var(--border-2)) border-box;
+                        mask: linear-gradient(black 0 0) border-box, linear-gradient(black 0) padding-box;
+                        mask-composite: subtract;
+                    }    
+                </code>
+            </pre>
+        </div>
+    </section>
+</body>
+
+</html>
