@@ -1,0 +1,28 @@
+.glowing-border {
+	--gradient-glow: yellow, green, blue, purple, red;
+
+	margin-block: 3rem;
+	padding: 8rem 3rem;
+	max-width: 60ch;
+
+	border: 3px solid transparent;
+	border-left: 0;
+	border-radius: 0 100vw 100vw 0;
+	background: linear-gradient(white 0 0) padding-box,
+		conic-gradient(from -90deg, var(--gradient-glow)) border-box;
+}
+
+@layer general-styling {
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: system-ui;
+	}
+
+	body {
+		margin: 0;
+		overflow-x: clip;
+	}
+}
