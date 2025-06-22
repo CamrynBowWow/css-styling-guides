@@ -10,6 +10,24 @@
 	border-radius: 0 100vw 100vw 0;
 	background: linear-gradient(var(--surface, canvas) 0 0) padding-box,
 		conic-gradient(from -90deg, var(--gradient-glow)) border-box;
+
+	position: relative;
+	isolation: isolate; /* It's stacking on the parent and not going behind the parent: NOTE make not in html on index page */
+}
+
+.glowing-border::before,
+.glowing-border::after {
+	content: '';
+	position: absolute;
+	border-radius: inherit;
+}
+
+.glowing-border::after {
+	z-index: -1;
+	inset: -2rem;
+	background: conic-gradient(from -90deg, var(--gradient-glow)) border-box;
+	filter: blur(3rem);
+	opacity: 0.5;
 }
 
 @layer general-styling {
