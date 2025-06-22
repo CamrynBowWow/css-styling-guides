@@ -22,8 +22,17 @@
 	border-radius: inherit;
 }
 
-.glowing-border::after {
+.glowing-border::before {
 	z-index: -1;
+	background: var(--surface, canvas);
+	inset: 2rem;
+	scale: 1.2 1;
+	transform-origin: right;
+	filter: blur(2rem);
+}
+
+.glowing-border::after {
+	z-index: -2;
 	inset: -2rem;
 	background: conic-gradient(from -90deg, var(--gradient-glow)) border-box;
 	filter: blur(3rem);
