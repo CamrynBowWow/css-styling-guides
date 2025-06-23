@@ -1,11 +1,14 @@
 .glowing-border {
 	--gradient-glow: yellow, green, blue, purple, red;
+	/* --glow-intensity: 0.25; NOTE: can edit to change values */
+	/* --glow-size: 1rem; */
+	/* --border-width: 3px; */
 
 	margin-block: 3rem;
 	padding: 8rem 3rem;
 	max-width: 60ch;
 
-	border: 3px solid transparent;
+	border: var(--border-width, 3px) solid transparent;
 	border-left: 0;
 	border-radius: 0 100vw 100vw 0;
 	background: linear-gradient(var(--surface, canvas) 0 0) padding-box,
@@ -28,15 +31,15 @@
 	inset: 0.5rem;
 	scale: 1.2 1;
 	transform-origin: right;
-	filter: blur(1rem);
+	filter: blur(var(--glow-size, 1rem));
 }
 
 .glowing-border::after {
 	z-index: -2;
 	inset: -1.5rem;
 	background: conic-gradient(from -90deg, var(--gradient-glow)) border-box;
-	filter: blur(1rem);
-	opacity: var(--glow-intensity, 0.25);
+	filter: blur(var(--glow-size, 1rem)); /* NOTE: the second value is a fallback value */
+	opacity: var(--glow-intensity, 0.125);
 }
 
 @layer general-styling {
