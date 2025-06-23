@@ -25,18 +25,18 @@
 .glowing-border::before {
 	z-index: -1;
 	background: var(--surface, canvas);
-	inset: 2rem;
+	inset: 0.5rem;
 	scale: 1.2 1;
 	transform-origin: right;
-	filter: blur(2rem);
+	filter: blur(1rem);
 }
 
 .glowing-border::after {
 	z-index: -2;
-	inset: -2rem;
+	inset: -1.5rem;
 	background: conic-gradient(from -90deg, var(--gradient-glow)) border-box;
-	filter: blur(3rem);
-	opacity: 0.5;
+	filter: blur(1rem);
+	opacity: var(--glow-intensity, 0.25);
 }
 
 @layer general-styling {
