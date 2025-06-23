@@ -42,6 +42,17 @@
 	opacity: var(--glow-intensity, 0.125);
 }
 
+.glowing-border.right {
+	margin-inline-start: auto;
+	border-radius: 100vw 0 0 100vw;
+	border: var(--border-width, 3px) solid transparent;
+	border-right: 0;
+
+	&::before {
+		transform-origin: left;
+	}
+}
+
 @layer general-styling {
 	* {
 		box-sizing: border-box;
