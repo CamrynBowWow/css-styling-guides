@@ -1,5 +1,5 @@
 .glowing-border {
-	--gradient-glow: yellow, green, blue, purple, red;
+	--gradient-glow: red, yellow, green, blue, purple, red;
 	/* --glow-intensity: 0.25; NOTE: can edit to change values */
 	/* --glow-size: 1rem; */
 	/* --border-width: 3px; */
@@ -43,6 +43,7 @@
 }
 
 .glowing-border.right {
+	--gradient-glow: purple, yellow, green orange, green, yellow;
 	margin-inline-start: auto;
 	border-radius: 100vw 0 0 100vw;
 	border: var(--border-width, 3px) solid transparent;
@@ -60,7 +61,7 @@
 
 	html {
 		font-family: system-ui;
-		/* color-scheme: dark; */
+		color-scheme: dark;
 	}
 
 	body {
