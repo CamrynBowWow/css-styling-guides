@@ -1,4 +1,4 @@
-/* the colors don't need to be registed */
+/* the colors don't need to be registered */
 @property --clr-1 {
 	syntax: '<color>';
 	inherits: true;
@@ -53,7 +53,7 @@
 		conic-gradient(from var(--glow-deg), var(--gradient-glow)) border-box;
 
 	position: relative;
-	isolation: isolate; /* It's stacking on the parent and not going behind the parent: NOTE make not in html on index page */
+	isolation: isolate; /* It's stacking on the parent and not going behind the parent: */
 
 	animation: glow 10s infinite linear;
 }
